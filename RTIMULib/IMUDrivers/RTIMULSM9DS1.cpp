@@ -382,17 +382,16 @@ bool RTIMULSM9DS1::IMURead()
 
     //  sort out gyro axes and correct for bias
 
-    m_imuData.gyro.setZ(-m_imuData.gyro.z());
+    m_imuData.gyro.setY(-m_imuData.gyro.y());
 
     //  sort out accel data;
 
-    m_imuData.accel.setX(-m_imuData.accel.x());
     m_imuData.accel.setY(-m_imuData.accel.y());
 
     //  sort out compass axes
 
     m_imuData.compass.setX(-m_imuData.compass.x());
-    m_imuData.compass.setZ(-m_imuData.compass.z());
+    m_imuData.compass.setY(-m_imuData.compass.y());
 
     //  now do standard processing
 
